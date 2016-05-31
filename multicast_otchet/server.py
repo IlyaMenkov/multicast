@@ -12,10 +12,4 @@ def start_server(password="123"):
     args = shlex.split(cmd)
     p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     result = p.communicate()[0]
-    print result
-
-
-
-
-
 start_server(password=password)
