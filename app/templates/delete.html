@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<hr>
+<h1>Удаление трансляции</h1>
+
+<hr>
+<form action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    <p>
+        Выберите имя трансляции:<br>
+        {{ form.names }}*
+    </p>
+
+    <p><input type="submit" value="Удалить"></p>
+</form>
+{% endblock %}

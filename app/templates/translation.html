@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<embed type="application/x-vlc-plugin"
+       pluginspage="http://www.videolan.org"
+       version="VideoLAN.VLCPlugin.2"
+       width="100%"
+       height="100%"
+       id="vlc"
+       loop="yes"
+       autoplay="yes"
+       target="udp://@{{ ip_address }}">
+</embed>
+{% endblock %}

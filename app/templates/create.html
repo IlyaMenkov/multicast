@@ -1,0 +1,31 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr>
+<h1></h1>
+<h2>Поддерживаются следующие виды трансляций: </h2>
+<h3> * Обычная трансляция </h3>
+<h3> * Трансляция по расписанию </h3>
+<h3> * Видео по запросу </h3>
+<hr>
+<form action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    <p>
+        Введите название трансляции:<br>
+        {{form.name}}*
+    </p>
+    <p>Введите путь к файлу:<br>
+        {{form.path}}*
+    </p>
+    <p>Введите время начала трансляции:<br>
+         {{form.dt}}
+    </p>
+    <p>Видео по запросу: {{form.VoD}} <br>
+
+    </p>
+
+    <p><input type="submit" value="Создать"></p>
+</form>
+{% endblock %}

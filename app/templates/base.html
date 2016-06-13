@@ -1,0 +1,44 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - MULTICAST</title>
+    {% else %}
+    <title>MULTICAST</title>
+    {% endif %}
+  </head>
+
+<body bgcolor="#D3D3D3">
+  <div>
+      <div><hr><h1  style="float: left; width:80%">СЕРВИС МУЛЬТИКАСТОВОЙ ТРАНСЛЯЦИИ СГТУ</h1></div>
+      <div style="float: right"><a href="index">На Главную</a></div>
+    <br>
+      {% if create %}
+      <div style="float: right"><a href="/create_translation">Начать трансляцию</a></div>
+    <br>
+      <div style="float: right"><a href="delete_translation">Удалить трансляцию</a></div>
+        {% endif %}
+    </div>
+
+    <div style="width:80%">
+      <br><br><hr>
+    <table style="width:100%">
+    {% if posts %}
+      {% for post in posts %}
+        <tr><hr>
+          <td><a href= {{ post.page }}> {{ post.name }} </a></td>
+            {% if post.dt %}
+              <td>Начало трасляции в {{ post.dt }}</td>
+            {% else %}
+              <td>Трансляция идет</td>
+            {% endif %}
+        </tr>
+      {% endfor %}
+    {% endif %}
+    </table>
+      <hr>
+    </div>
+
+    {% block content %}{% endblock %}
+
+  </body>
+</html>
